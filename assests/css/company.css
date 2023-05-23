@@ -1,0 +1,110 @@
+body{
+    margin:0px ;
+    box-sizing: border-box;
+}
+nav{
+    width: 100%;
+    height: 20vh;
+    color: white;
+    background-color: rgba(5, 5, 84, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    list-style: none;
+    margin: 10px;
+    color: rgb(225, 171, 89);
+}
+li:hover{
+    text-decoration: underline;
+    color: rgb(149, 156, 253);
+}
+#container{
+    width: 90%;
+    height: 70vh;
+    margin: 5px auto;
+    border: 2px solid rebeccapurple;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.box{
+    min-width: 400px;
+    min-height: fit-content;
+    border:2px solid blue;
+    margin: 20px 40px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 4px 4px 5px rgba(56, 56, 186, 0.5);
+    display:flex;
+    text-transform: capitalize;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 17px;
+}
+span{
+    font-size: large;
+    font-weight: 600;  
+}
+h1{
+    color:rgb(211, 211, 232);
+    margin: 15px 70px;
+}
+button{
+    width: 80px;
+    font-size: large;
+    color: white;
+    font-weight: 600;
+    background-color: rgb(65, 65, 217,0.9);
+    height: 30px;
+    /* margin: 5px 90px 20px 90px; */
+    border-radius: 10px;
+}
+button:active{
+    width: 81px;
+    font-size: 20px;
+    color: white;
+    height: 31px;
+    /* margin: 5px px 20px 90px; */
+    font-weight: 600;
+    border-radius: 10px;
+    border: 5px solid rgba(80, 191, 11, 0.9);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+form{
+    /* margin: 10px 30px; */
+    padding: 30px;
+}
+legend{
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(120, 120, 233);
+}
+
+#company-box{
+    width: 500px;
+    height: 400px;
+    overflow-y: auto;
+    /* overflow-x: none; */
+}
+fieldset{
+  border: 2px solid black;
+  width: 400px;
+}
+#student_button{
+    width: 150px;
+    height: 40px;
+    margin: 5px 100px;
+}
+table,th{
+    padding:10px ;
+    margin: 2px 40px 3px 45px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: rgb(53, 53, 171);
+    color: white;
+}

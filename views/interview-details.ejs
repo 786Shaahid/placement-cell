@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/interview.css">
+    <title>
+      <%=title%>
+    </title>
+</head>
+<body>
+  <nav>
+    <h1>WELCOME TO INTERVIEWS DETAILS..!</h1>
+  </div>  
+  <li><a href="/employees/home">Dashboard</a></li>
+  <li><a href="/employees/student">Add New Student</a></li>
+  <li><a href="/employees/add-company">Add Company</a></li>
+  <li><a href="/employees/student-list">Show Student List</a></li>
+  <li><a href="/employees/download-excel-data">Excel-Data</a></li>
+  
+  <div>
+    
+  </nav>
+      <div id="container">
+        <div id='left-container' class="box">
+         <h2>Interview Details</h2>
+         
+         <table >
+          <tr>
+            <th>Name of company :</th>
+            <td><%=allcompany.companyName%></td>
+          </tr>
+          <tr>
+          <th>Last Date :</th>
+            <td><%=allcompany.date%></td>
+          </tr>
+         </table>
+        <fieldset>
+           <legend>
+              Enrolled Student
+           </legend>
+         <form action="/employees/interview-details/<%=allcompany._id%>" method="post">
+           <label for="name">Enter Student Name :</label><br>
+           <input type="text" id="name" required placeholder="Enter Your Name" name="name"><br><br>
+          <label for="email">Enter Student ID:</label><br>
+          <input type="text" id="email" required placeholder="Enter Your Email" name="email"><br><br>
+          <label for="result">Result :</label>
+          <select name="result" id="result">
+            <option>Pass</option>
+            <option>On Hold</option>
+            <option>Fail</option>
+            <option>Dont'Attempt</option>
+          </select>
+          <button type="submit" >Submit</button>
+        </form>
+        
+        
+      </fieldset>
+
+         </div>
+         
+</div>
+<!-- <script>
+  const form = document.getElementById('update-form');
+
+form.addEventListener('submit', event => {
+  event.preventDefault(); // Prevent the form from submitting
+
+  // Get the form data
+  const formData = new FormData(form);
+
+  // Do something with the form data
+  const name = formData.get('name');
+  const email = formData.get('email');
+  
+  // Perform any necessary actions or validations
+  // ...
+  const pathArr=window.location.pathname.split('/');
+     const interviewId=pathArr[pathArr.length-1]
+     formData.append('id', interviewId);
+     fetch('/employees/interview-details', {
+    method: 'PATCH',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('Form data submitted successfully!');
+    } else {
+      console.error('Form data submission failed.');
+    }
+  })
+  .catch(error => console.error(error));
+
+  // Clear the form inputs
+  form.reset();
+  });
+  // function submitForm(event) {
+  //   event.preventDefault(); // Prevent the default form submission
+  //   const pathArr=window.location.pathname.split('/');
+  //    const interviewId=pathArr[pathArr.length-1]
+  // const name = document.getElementById('name').value;
+  // const email = document.getElementById('email').value;
+  // const status = document.getElementById('result').value;
+  // const formData = new FormData({
+   
+  // });
+  // // console.log(formData);
+  // formData.append('name',name);
+  // formData.append('email',email);
+  // formData.append('status',status);
+//   fetch('/employees/interview-details', {
+//     method: 'PATCH',
+//     body: { name,
+//     email,
+//     status},
+//   }).then(res=>{
+//     if(res.ok){
+//       console.log('submit successfully');
+//     }
+//   }).catch(err=>{
+//    console.log(err);
+//   })
+// }
+
+</script> -->
+
+
+
+
+</body>
+
+</html>

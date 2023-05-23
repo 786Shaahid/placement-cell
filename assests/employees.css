@@ -1,0 +1,41 @@
+ body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(244, 244, 238);
+}
+h1{
+    color: rgb(27, 27, 227);
+}
+form{
+    margin:25px;
+    padding: 30px;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+#container {
+  margin: 100px auto;
+  width: 25vw;
+  height: 60vh;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 5px rgb(42, 35, 233, 0.1);
+  line-height: 25px;
+  padding: 30px; 
+}
+button{
+    width: 170px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background-color: rgba(23, 23, 102);
+}
+button:active{
+box-shadow: 2px 3px 3px 5px rgb(72, 8, 132);
+}
+input{
+padding: 5px;
+
+}

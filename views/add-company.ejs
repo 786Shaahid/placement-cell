@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interview</title>
+<link rel="stylesheet" href="/css/company.css">
+</head>
+<body>
+    <nav>
+        <h1>WELCOME TO COMPANY DETAILS !</h1>
+      </div>  
+      <li><a href="/employees/home">Dashboard</a></li>
+      <li><a href="/employees/student">Add New Student</a></li>
+      <li><a href="/employees/add-company">Add Company</a></li>
+      <li><a href="/employees/student-list">Show Student List</a></li>
+      <li><a href="/employees/download-excel-data">Excel-Data</a></li>
+      
+      <div>
+      </nav>
+      <div id="container">
+          <div id='left-container' class="box">
+                 <fieldset>
+                   <legend>
+                    Add Company 
+                </legend>
+                <form action="/employees/add-company" method="post">
+                    <label for="companyName">Name of Company : </label><br>
+                    <input type="text" required name="companyName" id="companyName" ><br><br>
+                    <label for="date">Date of Interview :</label> <br>
+                    <input type="date" id="date" required name="date" > <br><br>  
+                    <button type="submit" id="student_button">Add</button>
+                </form>
+               </fieldset>
+            </div>
+
+                 
+            <%if(companydetails.length && companydetails){%>
+                    <div id="company-box">
+                       <h1>Apply here..</h1>
+                       <table border="2px">
+                        <thead>
+                            <th >Name of Company</th>
+                            <th >Last Date</th>
+                            <th >Apply Here</th>
+                        </thead>
+                       </table>
+
+
+                        <% for(i=0;i<companydetails.length ;i++){%>
+                            <div id="right-container" class="box" data-interview=<%=JSON.stringify(companydetails)%>>
+                                <span><%=companydetails[i].name%></span>
+                                <span><%=companydetails[i].date%></span>
+                                <button type="submit"><a href="./enroll-student/<%=companydetails[i].id%>">Apply</a></button>
+                            </div>
+                            <%}  %>
+                        </div>
+                            <%} %> 
+
+
+
+</body>
+</html>

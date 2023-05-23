@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>student-details</title>
+    <link rel="stylesheet" href="/css/student.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>WELCOME TO STUDENT DETAILS.. !</h1>
+    </div>  
+    <li><a href="/employees/home">Dashboard</a></li>
+    <li><a href="/employees/student">Add New Student</a></li>
+    <li><a href="/employees/add-company">Add Company</a></li>
+    <li><a href="/employees/student-list">Show Student List</a></li>
+    <li><a href="/employees/download-excel-data">Excel-Data</a></li>
+   
+    <div>
+      
+    </nav>
+    <div id="container">
+      <div id="left-container" class="box">
+        <form action="/employees/student" method="post">
+          <fieldset>
+            <legend>ADD NEW STUDENT</legend>
+            <h1>Student Details</h1>
+            <label for="Batch"> Batch Name :</label>
+            <input
+              type="text"
+              id="Batch"
+              required
+              placeholder="Enter Batch Name"
+              name="batch"
+            /><br /><br />
+            <label for="student-id"> Student ID :</label>
+            <input
+              type="email"
+              id="student-id"
+              required
+              placeholder="Enter Email ID"
+              name="email"
+            /><br /><br />
+            <label for="name" >Name of student :</label>
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Enter Name of Student"
+              name="name"
+            /><br /><br />
+            <label for="college">Name of college :</label>
+            <input
+              type="text"
+              id="college"
+              required
+              placeholder="Enter Name of college"
+              name="collegeName"
+            /><br /><br />
+            <label for="status">Status :</label>
+            <select name="studentStatus" id="status">
+              <option >Placed</option>
+              <option >Not_Placed</option>
+            </select>
+            <br /><br />  
+            
+            <label for="dsa">DSA Final Score :</label>
+            <input
+              type="number"
+              id="dsa"
+              required
+              placeholder="Enter DSA Score"
+              name="dsaScore"
+            /><br /><br />
+            <label for="webD">Web Devolopment Final Score :</label>
+            <input
+              type="number"
+              id="webD"
+              required
+              name="webScore"
+              placeholder="Enter WebD Score"
+            /><br /><br />
+            <label for="react">React Final Score :</label>
+            <input
+              type="number"
+              id="react"
+              required
+              name="reactScore"
+              placeholder="Enter React Score"
+            /><br /><br />
+
+            <button type="submit" id="student_button">
+              Add Student 
+            </button>
+            <button type="submit" id="student_button">
+              <a href="./home">GoTo Home</a>
+            </button><br>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

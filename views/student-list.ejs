@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/css/student-list.css" />
+  </head>
+  <body>
+    <nav>
+      <h1> List of all Studnets.. !</h1>
+    </div>  
+    <li><a href="/employees/home">Dashboard</a></li>
+    <li><a href="/employees/student">Add New Student</a></li>
+    <li><a href="/employees/add-company">Add Company</a></li>
+    <li><a href="/employees/student-list">Show Student List</a></li>
+    <li><a href="/employees/download-excel-data">Excel-Data</a></li>
+    
+    <div>
+      
+    </nav>
+    <%if(students.length>0){%>
+    <div id="container" >
+      <div
+        div
+        id="left-container"
+        class="box"
+      >
+        <fieldset>
+          <legend>Student-List</legend>
+          <table border="2px">
+            <th>Student Name</th>
+            <th>Details</th>
+          </table>
+          <%for(student of students){%>
+          <div class="student-box">
+            <h2><%=student.name%></h2>
+            <button
+              type="submit"
+              id="student_button"
+              onclick="viewsDetails(event)"
+              value="<%=JSON.stringify(student)%>"
+            >
+              Details
+            </button>
+          </div>
+          <%}%>
+        </fieldset>
+      </div>
+      <%}%>
+      <div id="studentDetails-box"></div>
+    </div>
+    <script>
+      const student_details = document.querySelector("#studentDetails-box");
+      
+      function viewsDetails(event) {
+         let students=JSON.parse(event.target.value);
+                    const companyData =students.interviews
+        student_details.innerHTML = `<div id="right-container" class="box">
+                  <fieldset>
+                    <legend>Student Details</legend>
+                     <table>
+                        <tr>
+                          <th>Name of Student</th>
+                          <th>${students.name}</th>
+                        </tr>
+                        <tr>
+                          <th>Batch Name</th>
+                          <th>${students.batch} </th>
+                        </tr>
+                        <tr>
+                          <th>Student_ID</th>
+                          <th>${students.email}</th>
+                        </tr>
+                        <tr>
+                          <th>College Name</th>
+                          <th>${students.collegeName} </th>
+                        </tr>
+                        <tr>
+                          <th>Student Status
+                          </th>
+                          <th>${students.studentStatus} </th>
+                        </tr>
+                        <tr>
+                          <th>Score in DSA</th>
+                          <th>${students.dsaScore} </th>
+                        </tr>
+                        <tr>
+                          <th>Score in Webdevelopment</th>
+                          <th>${students.webScore} </th>
+                        </tr>
+                        <tr>
+                          <th>Score in React</th>
+                          <th>${students.reactScore} </th>
+                        </tr>
+                        
+                      </table>
+                      <div class="center">
+                      <button type="submit" class="student_button" ><a href=" /student-updated/edit-student/<%=student._id%>">Edit</a></button>
+                      <button type="submit" class="student_button" ><a href="./delete/<%=student._id%>">Delete</a></button>
+                      </div>
+                    <p></p>
+                    <div class="center">
+                      <h1>Interview Details</h1>
+                      </div>
+                      <table >
+                        <tr>
+                          <th>Company Name</th>
+                          <th>Date</th>
+                          <th>status</th>
+                          </tr>
+                          </table> 
+                   <table id='company-row'> 
+                   
+                    </table>
+                   </fieldset>
+                            </div>`;
+
+                            const interview_box = document.querySelector("#company-row");
+                               for(let company of companyData){
+                                interview_box.innerHTML+=`
+                                <tr>
+                            <th>${company.companyName}</th>
+                          <th>${company.date}</th>
+                          <th>${company.result}</th>
+                          </tr>`
+                               }
+   
+
+                          } 
+
+
+    </script>
+  </body>
+</html>
+
