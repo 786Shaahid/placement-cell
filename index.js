@@ -30,7 +30,12 @@ app.use(express.static(path.join(__dirname,'assests')))
 
   app.use('/employees',require('./routes/employe'))
   app.use('/student-updated',require('./routes/update'))
-
+// add home 
+app.all("/*", (req, res) => {
+  return res.send(
+    "<h1>Page does not exist</h1><br/><h3>Links For Accessing app</h3><br/><ul><li><a href='/employees/home'>Home</a></li><li><a href='/employees/student-list'>Student List</a></li><li><a href='/employees/add-company'>Add Company</a></li></ul>"
+  );
+});
 
 app.listen(port,()=>{
   console.log(`Server is running on port:${port}`);
