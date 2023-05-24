@@ -92,7 +92,4 @@ if(!userExits) return res.status(400).send('This is email not exits..!');
     return res.status(400).send('Invalid Credential !')
  }
 
-// create JWT
-
-
 }

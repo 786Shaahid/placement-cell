@@ -16,7 +16,6 @@ const mongoose=require('mongoose');
            },
            token:{
             type:String,
-            unique:true
            }
 },{timestamps:true});
 

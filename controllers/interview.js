@@ -1,7 +1,7 @@
 const { model } = require("mongoose");
 const Company = require("../models/company");
 const Student = require("../models/student");
-
+// go to interviews details page
 module.exports.get_interview = async (req, res) => {
   const id = req.params.id;
   let companies = await Company.findById(id);
@@ -10,12 +10,10 @@ module.exports.get_interview = async (req, res) => {
     title: "interview-details",
   });
 };
-
-// iska name change karunga or age se ase galti nhi karunga
-// update interview status rkhunga
+// update interview 
 module.exports.update_interview = async (req, res) => {
+  // id for company
   const id = req.params.id;
-
   //   check student registered or not
   const student = await Student.findOne({ email: req.body.email });
   if (!student)

@@ -1,14 +1,13 @@
 const Students=require('../models/student');
-
+// this is for student-list
 module.exports.student_list=async(req,res)=>{
     const id=req.params.id;
     const student=await Students.findById(id);
-
          return res.status(200).render('edit-student',{
             updateStudent:student
          });
 }
-
+// for update student-details
 module.exports.updateStudent_details=async (req,res)=>{
     try{
     const id=req.params.id;

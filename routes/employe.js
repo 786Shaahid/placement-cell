@@ -5,9 +5,13 @@ const studentDetail=require('../controllers/student');
 const jobDetails=require('../controllers/company');
 const interviewDetails=require('../controllers/interview');
 const excelStudentData=require('../controllers/csv')
+const updateStudent=require('../controllers/edit-student');
+
+route.get('/edit-student/:id',updateStudent.student_list)
+route.post('/updetedStudent/:id',updateStudent.updateStudent_details);
+
 route.get('/home',controllers.home);
 
-route.get('/',controllers.home);
 
 
 
@@ -16,8 +20,6 @@ route.get('/student-list',studentDetail.student_list);
 route.get('/add-company',jobDetails.get_company);
 route.post('/add-company',jobDetails.company_details);
 
-route.get('/signup',controllers.sign_up);
-route.post('/signup',controllers.signup_post);
 
 // Add company and enrollred student
 route.get('/enroll-student/:id',interviewDetails.get_interview);
