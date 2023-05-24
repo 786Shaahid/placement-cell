@@ -26,6 +26,9 @@ route.get('/enroll-student/:id',interviewDetails.get_interview);
 route.post('/interview-details/:id',interviewDetails.update_interview);
 
 
+route.post('/signup',controllers.signup_post);
+
+
 route.get('/signin',controllers.sign_in);
 route.post('/signin',verifyToken,controllers.signin_post);
 

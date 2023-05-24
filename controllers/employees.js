@@ -60,7 +60,6 @@ if(req.body.confirmpassword===req.body.password){
                 httpOnly: true,
                 sameSite: 'lax'
               });
-
         return res.status(200).render('employees-sign_in');
     }catch(err){
       return res.status(400).send(err);
@@ -71,7 +70,7 @@ if(req.body.confirmpassword===req.body.password){
 }
 }
 
-
+// post signin page
 module.exports.signin_post=async(req,res)=>{
 // validate the user's email and passport
 const {error}=await loginValidator(req.body);
