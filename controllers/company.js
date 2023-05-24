@@ -1,6 +1,6 @@
 const { error } = require("@hapi/joi/lib/annotate");
 const Company = require("../models/company");
-
+// show company
 module.exports.get_company = async(req, res) => {
   let allcompany = await Company.find().sort({createdAt:-1});
   if(allcompany){
@@ -19,7 +19,7 @@ module.exports.get_company = async(req, res) => {
     return res.status(200).render("add-company")
   }
 };
-
+// save company or interview details
 module.exports.company_details = async (req, res) => {
   const companyDetails = new Company({
     companyName:req.body.companyName,
