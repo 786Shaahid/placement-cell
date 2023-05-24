@@ -3,7 +3,6 @@ const studentDetail=require('../models/student');
 const interview=require('../models/company');
 // show student list
 module.exports.student_list=async (req,res)=>{ 
-  const student=await studentDetail  
     let allstudent=await studentDetail.find().populate('interviews');
         allstudent=allstudent.map(student=>{
              return student
@@ -23,7 +22,7 @@ module.exports.studentForm=async (req,res)=>{
     try{
         const student=new studentDetail(req.body);
         await student.save();
-      return   res.status(200).redirect("/employees/home")
+      return   res.status(200).redirect("/employees/student-list")
   }catch(err){
     return res.status(400).send(err);
   }
@@ -34,7 +33,7 @@ module.exports.delete_student=async(req,res)=>{
   try{
     const id=req.params.id;
     const getStudent=await studentDetail.findByIdAndDelete(id);
-    return res.status(200).redirect('back');
+    return res.status(200).redirect('/employees/student-list');
   }catch(err){
     return res.status(400).JSON({
       status:failed,

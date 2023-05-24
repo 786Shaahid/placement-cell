@@ -9,21 +9,20 @@
   </head>
   <body>
     <nav>
-      <h1> List of all Students.. !</h1>
-    </div>  
+      <div>
+      <h1> LIST OF ALL STUDENT.. !</h1>
+    </div>
     <li><a href="/employees/home">Dashboard</a></li>
     <li><a href="/employees/student">Add New Student</a></li>
     <li><a href="/employees/add-company">Add Company</a></li>
     <li><a href="/employees/student-list">Show Student List</a></li>
     <li><a href="/employees/download-excel-data">Excel-Data</a></li>
-    
-    <div>
+    </div>
       
     </nav>
     <%if(students.length>0){%>
     <div id="container" >
       <div
-        div
         id="left-container"
         class="box"
       >
@@ -41,8 +40,8 @@
               id="student_button"
               onclick="viewsDetails(event)"
               value="<%=JSON.stringify(student)%>"
-            >
-              Details
+              >
+             Details 
             </button>
           </div>
           <%}%>
@@ -52,8 +51,8 @@
       <div id="studentDetails-box"></div>
     </div>
     <script>
+
       const student_details = document.querySelector("#studentDetails-box");
-      
       function viewsDetails(event) {
          let students=JSON.parse(event.target.value);
                     const companyData =students.interviews
@@ -97,8 +96,8 @@
                         
                       </table>
                       <div class="center">
-                      <button type="submit" class="student_button" ><a href=" /student-updated/edit-student/<%=student._id%>">Edit</a></button>
-                      <button type="submit" class="student_button" ><a href="./delete/<%=student._id%>">Delete</a></button>
+                      <button type="submit" class="student_button" ><a href=/employees/edit-student/${students._id}>Edit</a></button>
+                      <button type="submit" class="student_button" ><a href=/employees/delete/${students._id}>Delete</a></button>
                       </div>
                     <p></p>
                     <div class="center">
