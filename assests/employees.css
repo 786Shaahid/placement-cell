@@ -17,7 +17,7 @@ form{
 #container {
   margin: 100px auto;
   width: 25vw;
-  height: 60vh;
+  min-height: 60vh;
   background-color: white;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 5px rgb(42, 35, 233, 0.1);

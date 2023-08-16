@@ -6,7 +6,7 @@ const jwt=require('jsonwebtoken');
 require('dotenv').config();
 const cookie=require('cookie');
 
-
+// render all these file 
 module.exports.inteview= async (req,res)=>{
   res.render('interviews-details');
 }
@@ -30,7 +30,7 @@ module.exports.signup_post=async(req,res)=>{
      
       // check email exist in database or not
      const emailExits= await User.findOne({email:req.body.email});
-     if(emailExits) return res.status(400).send('This email already exits..!, Please go for login');
+     if(emailExits) return res.status(200).render('employees-sign_in',{message:"This email is already exits,Please login with email and your password"});
      
      //hashing the password
    const salt= await bcrypt.genSalt(10);
@@ -47,20 +47,13 @@ if(req.body.confirmpassword===req.body.password){
       const token = jwt.sign(
         { user_id: user._id},
         process.env.TOKEN_KEY,
-        {
-          expiresIn: "2h",
-        }
       );
       // save user token
       user.token =  token;
         const userData= await user.save();
-              res.cookie('auth',userData.token,{
-                expires: new Date('06 05 2023'),
-                secure: true,
-                httpOnly: true,
-                sameSite: 'lax'
-              });
-        return res.status(200).render('employees-sign_in');
+              res.cookie('auth',userData.token);
+              // console.log("empolyee signup",req.cookies);
+        return res.status(200).render('employees-sign_in',{message:""});
     }catch(err){
       return res.status(400).send(err);
     }

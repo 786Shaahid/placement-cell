@@ -8,8 +8,14 @@
     <link rel="stylesheet"  href="/employees.css">
 </head>
 <body>
+  <%if(message){%>
+    <h2> <%=message%></h2>
+    <%}else{%> 
+      <h1></h1>
+      <%}%>
   <div id="container">
   <h1>Sign In</h1>
+
           <form action="/employees/signin" method="post">
 <label for="employe-email">Email</label><br>
 <input type="email" id="employe-email" placeholder="Enter your Email" required name="email"><br>
